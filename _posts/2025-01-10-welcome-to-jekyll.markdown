@@ -1,29 +1,131 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to my blog!"
 date:   2025-01-10 20:49:07 +0800
-categories: jekyll update
+categories:  update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+### **从零到一：搭建自己的 GitHub 博客并开启创作之旅**
 
-Jekyll requires blog post files to be named according to the following format:
+在互联网时代，拥有一个属于自己的博客，不仅是展示自我和记录生活的方式，更是表达观点、分享知识、与世界交流的重要工具。而今天，我通过 **GitHub Pages** 和 **Jekyll**，完成了从零开始搭建博客的全过程。以下是完整的过程和心得，希望能为想要创建个人博客的你提供参考！
 
-`YEAR-MONTH-DAY-title.MARKUP`
+---
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+### **为什么选择 GitHub Pages + Jekyll？**
+对于新手和技术爱好者来说，GitHub Pages 和 Jekyll 是搭建静态博客的理想选择：
+1. **完全免费**：托管在 GitHub，无需服务器成本。
+2. **高效便捷**：Jekyll 生成静态页面，速度快且易于管理。
+3. **高度可定制**：支持主题、更改配置文件、自定义样式等。
+4. **支持 Markdown**：用 Markdown 写文章，让写作更专注、更轻松。
+5. **开源精神**：托管在 GitHub，代码透明且易于协作。
 
-Jekyll also offers powerful support for code snippets:
+---
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+### **搭建博客的完整流程**
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+#### **1. 创建 GitHub Pages 仓库**
+首先，我们在 GitHub 上创建了一个名为 `zhanbingli.github.io` 的仓库。这个特殊的命名规则使 GitHub Pages 能将仓库内容直接部署到 `https://zhanbingli.github.io`。
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+#### **2. 安装 Jekyll 和初始化项目**
+我们使用 Jekyll 快速生成了一个博客模板。在本地运行以下命令即可：
+```bash
+jekyll new my-blog
+cd my-blog
+bundle exec jekyll serve
+```
+通过浏览器访问 `http://localhost:4000`，我们可以看到初始的博客页面！
+
+#### **3. 推送到 GitHub**
+本地项目创建后，我们将其提交并推送到 GitHub：
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/Zhanbingli/zhanbingli.github.io.git
+git push -u origin main
+```
+
+#### **4. 配置 GitHub Pages**
+在 GitHub 仓库的 **Settings > Pages** 中，选择 `main` 分支作为 Pages 的来源。几分钟后，博客成功上线！
+
+#### **5. 解决部署问题**
+在这个过程中，我们遇到了几个常见问题：
+- **远程仓库内容冲突**：通过 `git pull` 同步远程仓库内容，再重新提交。
+- **页面显示默认模板**：调整 `_config.yml` 文件，正确配置 `url` 和 `baseurl`。
+- **缓存导致更新延迟**：清除浏览器缓存（windows:ctrl+shift+R），或通过 GitHub Actions 手动触发重新部署。
+
+通过耐心排查和逐步调整，我成功解决了这些问题，让博客内容正确显示。
+
+---
+
+### **博客的初步优化**
+在搭建博客的基础上，我还进行了以下优化：
+
+#### **1. 自定义配置**
+编辑 `_config.yml` 文件，更改了博客的标题、描述和基本参数。例如：
+```yaml
+title: "Zhanbingli 的博客"
+description: "记录我的技术学习与生活感悟"
+url: "https://zhanbingli.github.io"
+baseurl: ""  # 如果部署到子路径需要指定子路径名
+theme: minima  # 使用 Jekyll 默认主题
+```
+
+#### **2. 撰写第一篇文章**
+Jekyll 使用 `_posts` 文件夹存储博客文章，每篇文章都以 Markdown 格式书写，并按日期命名。例如：
+`2025-01-10-my-first-blog.md`。
+文章内容包括以下结构：
+```yaml
+---
+layout: post
+title: "我的第一篇博客"
+date: 2025-01-10 12:00:00
+categories: [技术, 博客]
+tags: [GitHub, Jekyll, Pages]
+---
+```
+
+正文部分用 Markdown 书写，简单直观，极大提升了写作体验。
+
+#### **3. 使用主题**
+通过配置主题（例如 `minima`），让博客页面更加美观。如果需要更多个性化设计，还可以挑选第三方主题并进行深度定制。
+
+---
+
+### **从搭建博客中学到什么？**
+在这个过程中，我不仅学会了如何搭建博客，还获得了很多启发和技能：
+
+1. **解决问题的耐心**  
+   搭建博客的过程中，我们遇到了路径错误、文件冲突、缓存问题等挑战。逐一排查、解决问题的过程本身，就是一次宝贵的学习。
+
+2. **用技术赋能创作**  
+   从零搭建博客，熟悉了 Git、GitHub、Jekyll 等工具，同时也感受到了技术和创作结合的魅力。
+
+3. **记录与分享的重要性**  
+   博客不仅是记录个人成长的方式，也是分享知识、积累影响力的有效途径。通过输出倒逼输入，能让知识沉淀得更牢固。
+
+---
+
+### **下一步计划：打造更有特色的博客**
+搭建完基础博客后，以下是我们下一步的目标：
+
+#### **1. 丰富内容**
+撰写更多有价值的文章，包括：
+- 技术分享：比如 Git、Jekyll、AI 学习。
+- 生活感悟：记录个人成长与重要时刻。
+
+#### **2. 添加功能**
+- **评论系统**：集成 [Gitalk](https://github.com/gitalk/gitalk) 或 [Disqus]。
+- **站内搜索**：让读者可以快速查找内容。
+- **SEO优化**：提升博客的搜索引擎友好度。
+- **统计分析**：通过 Google Analytics 或其他工具了解访客数据。
+
+#### **3. 设计个性化风格**
+- 深入定制主题，设计更加符合个人风格的页面布局和配色。
+- 添加自定义 logo、封面图片，让博客更具吸引力。
+
+---
+
+### **结语**
+从今天的搭建过程来看，创建一个属于自己的博客并不复杂，哪怕是新手也能快速上手。更重要的是，这个博客不仅是技术的实践，更是创作的起点。无论你是想分享知识，记录生活，还是提升个人影响力，拥有一个博客都是绝佳选择。
+
+希望这篇文章能帮助你开启自己的博客之旅。如果在过程中遇到任何问题，欢迎随时联系我交流经验！让我们用博客的方式，将知识与热情传递给更多人！

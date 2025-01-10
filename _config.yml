@@ -21,10 +21,10 @@
 title: "lizhanbing blog"
 email: "3163525375@qq.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  "这是我的个人博客，记录了我的学习和生活。"
+  "这是我的个人博客，这里录了我的学习和生活。"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhanbingli.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+twitter_username: Zhanbingli
 github_username:  Zhanbingli
 
 # Build settings
